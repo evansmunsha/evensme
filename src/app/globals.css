@@ -4,65 +4,59 @@
 
 @layer base {
   :root {
-    --background: 224, 5%, 95%;
-    --foreground: 240 10% 3.9%;
+    --background: 248, 249, 250; /* Light Gray */
+    --foreground: 52, 58, 64; /* Dark Gray */
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 255, 255, 255; /* White */
+    --card-foreground: 52, 58, 64; /* Dark Gray */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --primary: 0, 123, 255; /* Blue */
+    --primary-foreground: 255, 255, 255; /* White */
 
-    --primary: 142.1 76.2% 36.3%;
-    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 40, 167, 69; /* Green */
+    --secondary-foreground: 255, 255, 255; /* White */
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --muted: 248, 249, 250; /* Light Gray */
+    --muted-foreground: 52, 58, 64; /* Dark Gray */
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 255, 193, 7; /* Orange */
+    --accent-foreground: 52, 58, 64; /* Dark Gray */
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --destructive: 220, 53, 69; /* Red */
+    --destructive-foreground: 255, 255, 255; /* White */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --border: 240, 240, 240; /* Light Border */
+    --input: 240, 240, 240; /* Light Input Background */
+    --ring: 0, 123, 255; /* Blue Ring */
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 142.1 76.2% 36.3%;
-
-    --radius: 1rem;
+    --radius: 0.5rem; /* Adjusted for a more modern look */
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 0 0% 95%;
+    --background: 20, 20, 20; /* Dark Background */
+    --foreground: 255, 255, 255; /* White Text */
 
-    --card: 24 9.8% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 30, 30, 30; /* Dark Card Background */
+    --card-foreground: 255, 255, 255; /* White Text on Card */
 
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 95%;
+    --primary: 0, 123, 255; /* Blue */
+    --primary-foreground: 255, 255, 255; /* White */
 
-    --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 40, 167, 69; /* Green */
+    --secondary-foreground: 255, 255, 255; /* White */
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --muted: 30, 30, 30; /* Dark Muted Background */
+    --muted-foreground: 200, 200, 200; /* Light Gray Text */
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 240 5% 64.9%;
+    --accent: 255, 193, 7; /* Orange */
+    --accent-foreground: 20, 20, 20; /* Dark Text on Accent */
 
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 0 0% 98%;
+    --destructive: 220, 53, 69; /* Red */
+    --destructive-foreground: 255, 255, 255; /* White */
 
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 85.7% 97.3%;
-
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 142.4 71.8% 29.2%;
+    --border: 60, 60, 60; /* Dark Border */
+    --input: 40, 40, 40; /* Dark Input Background */
+    --ring: 0, 123, 255; /* Blue Ring */
   }
 }
 
@@ -74,3 +68,71 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.str-chat {
+  --str-chat__font-family: inherit;
+  --str-chat__primary-color: theme(colors.primary.DEFAULT);
+  --str-chat__on-primary-color: theme(colors.primary.foreground);
+  --str-chat__active-primary-color: theme(colors.primary.foreground);
+  --str-chat__primary-color-low-emphasis: color-mix(
+    in hsl,
+    hsl(var(--primary)) 10%,
+    transparent
+  );
+  --str-chat__background-color: theme(colors.card.DEFAULT);
+  --str-chat__secondary-background-color: theme(colors.card.DEFAULT);
+  --str-chat__message-textarea-background-color: theme(colors.background);
+  --str-chat__channel-preview-active-background-color: theme(
+    colors.accent.DEFAULT
+  );
+  --str-chat__channel-preview-hover-background-color: var(
+    --str-chat__channel-preview-active-background-color
+  );
+  --str-chat__secondary-surface-color: theme(colors.muted.DEFAULT);
+  --str-chat__own-message-bubble-color: theme(colors.primary.foreground);
+  --str-chat__primary-surface-color: theme(colors.primary.DEFAULT);
+  --str-chat__primary-surface-color-low-emphasis: var(
+    --str-chat__primary-color-low-emphasis
+  );
+  --str-chat__disabled-color: theme(colors.muted.DEFAULT);
+  --str-chat__cta-button-border-radius: var(--radius);
+}
+
+.str-chat-channel-list {
+  border-right: none;
+}
+
+.str-chat__channel-list-react .str-chat__channel-list-messenger-react {
+  padding-bottom: 0;
+}
+
+.str-chat__channel-search-bar-button--exit-search {
+  display: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .scrollbar-hide{
+    scrollbar-width: none;
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .moving-gradient {
+    background: linear-gradient(270deg, #007BFF, #28A745, #FFC107, #F8F9FA);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+  }

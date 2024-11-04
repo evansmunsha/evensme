@@ -1,6 +1,15 @@
-import type { Metadata } from "next";
+import { Toaster } from "@/components/ui/toaster";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { ThemeProvider } from "next-themes";
 import localFont from "next/font/local";
+import { extractRouterConfig } from "uploadthing/server";
+import { fileRouter } from "./api/uploadthing/core";
 import "./globals.css";
+import ReactQueryProvider from "./ReactQueryProvider";
+import { constructMetadata } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/react"
+import { Metadata } from "next";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -11,13 +20,7 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
-export const metadata: Metadata = {
-  title: {
-    template: "%s | bugbook",
-    default: "bugbook",
-  },
-  description: "The social media app for powernerds",
-};
+export const metadata = constructMetadata();
 
 export default function RootLayout({
   children,
@@ -25,10 +28,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
-    </html>
+
+      <html lang="en">
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <NextSSRPlugin routerConfig={extractRouterConfig(fileRouter)} />
+          <ReactQueryProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+              <Analytics />
+            </ThemeProvider>
+          </ReactQueryProvider>
+          <Toaster />
+        </body>
+      </html>
   );
 }
