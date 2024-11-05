@@ -18,8 +18,9 @@ export default function LoadingButton({
       className={cn("flex items-center gap-2", className)}
       {...props}
     >
-      {loading && <div className="flex items-center justify-center mx-auto h-auto">
-        'Loading '
+      {loading && 
+      <div className="flex items-center justify-center mx-auto h-auto">
+        Loading...
       </div>}
       {props.children}
     </Button>

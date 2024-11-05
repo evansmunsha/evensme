@@ -5,7 +5,7 @@ import Link from "next/link";
 import SignUpForm from "./SignUpForm";
 
 export const metadata: Metadata = {
-  title: "Sign Up",
+  title: "Sign Up"
 };
 
 export default function Page() {
@@ -16,11 +16,11 @@ export default function Page() {
           <div className="space-y-1 text-center">
             <h1 className="text-4xl font-extrabold text-[rgb(var(--foreground))]">Join the Evensme Community!</h1>
             <p className="text-lg text-[rgb(var(--muted-foreground))]">
-              Unlock exclusive resources, tools, and insights tailored for online marketers. 
+              Unlock exclusive resources&quot tools&quot and insights tailored for online marketers. 
               Connect with industry experts and elevate your marketing strategies!
             </p>
             <blockquote className="text-md italic text-[rgb(var(--muted-foreground))] border-l-4 border-[rgb(var(--primary))] pl-4">
-              "Evensme provides invaluable support for marketers of all levels, helping everyone connect, learn, and grow together!"
+              "Evensme provides invaluable support for marketers of all levels&quot helping everyone connect&quot learn&quot and grow together!"
             </blockquote>
           </div>
           <div className="space-y-5">
