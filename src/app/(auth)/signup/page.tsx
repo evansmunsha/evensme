@@ -20,7 +20,7 @@ export default function Page() {
               Connect with industry experts and elevate your marketing strategies!
             </p>
             <blockquote className="text-md italic text-[rgb(var(--muted-foreground))] border-l-4 border-[rgb(var(--primary))] pl-4">
-              "Evensme provides invaluable support for marketers of all levels&quot helping everyone connect&quot learn&quot and grow together!"
+              Evensme provides invaluable support for marketers of all levels&quot helping everyone connect&quot learn&quot and grow together!
             </blockquote>
           </div>
           <div className="space-y-5">
