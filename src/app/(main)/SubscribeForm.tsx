@@ -1,10 +1,14 @@
 "use client"
 import { useState } from 'react';
-import { Button } from './ui/button';
-import Modal from './Model';
+import { Button } from '../../components/ui/button';
+import Modal from '../../components/Model';
 import { BadgeDollarSign } from 'lucide-react';
 
-const SubscribeForm: React.FC = () => {
+interface MenuBarProps {
+    className?: string;
+}
+
+export async function SubscribeForm({ className }: MenuBarProps) {
     const [email, setEmail] = useState<string>('');
     const [message, setMessage] = useState<string>('');
 
@@ -28,7 +32,7 @@ const SubscribeForm: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
 
     return (
-        <>
+        <div className={className}>
             <Button
             variant="secondary"
             className="flex items-center justify-start gap-3 bg-white w-full"
@@ -56,8 +60,6 @@ const SubscribeForm: React.FC = () => {
                     {message && <p>{message}</p>}
                 </div>
             </Modal>
-        </>
+        </div>
     );
 };
-
-export default SubscribeForm;

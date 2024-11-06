@@ -6,8 +6,8 @@ import ForYouFeed from "./ForYouFeed";
 
 export default function Home() {
   return (
-    <main className="flex w-full min-w-0 gap-5 bg-[rgb(var(--background))]">
-      <div className="w-full min-w-0 space-y-5 bg-[rgb(var(--card))] rounded-lg shadow-md p-4">
+    <main className="flex w-full min-w-0 gap-5">
+      <div className="w-full min-w-0 space-y-5 rounded-lg shadow-md ">
         <PostEditor />
         <Tabs defaultValue="for-you">
           <TabsList className="flex space-x-2">

@@ -84,7 +84,7 @@ export default function PostEditor() {
   }
 
   return (
-    <div className="flex flex-col gap-3 rounded-lg bg-[rgb(var(--card))] p-4 shadow-md">
+    <div className="flex flex-col gap-5 rounded bg-card p-5 shadow-sm">
       <div className="flex gap-3">
         <Link href={`/users/${user?.username}`}>
         
@@ -94,7 +94,7 @@ export default function PostEditor() {
           <EditorContent
             editor={editor}
             className={cn(
-              "max-h-[20rem] w-full overflow-y-auto rounded bg-[rgb(var(--background))] px-5 py-3",
+              "max-h-[20rem] w-full overflow-y-auto rounded bg-background px-5 py-3",
               isDragActive && "outline-dashed",
             )}
             onPaste={onPaste}
