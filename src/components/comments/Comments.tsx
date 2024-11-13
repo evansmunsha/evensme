@@ -8,16 +8,17 @@ import Loading from "@/app/(main)/loading";
 
 interface CommentsProps {
   post: PostData;
+  comment: CommentData;
 }
 
-export default function Comments({ post }: CommentsProps) {
+export default function Comments({ comment,post }: CommentsProps) {
   const { data, fetchNextPage, hasNextPage, isFetching, status } =
     useInfiniteQuery({
-      queryKey: ["comments", post.id],
+      queryKey: ["comments", comment],
       queryFn: ({ pageParam }) =>
         kyInstance
           .get(
-            `/api/posts/${post.id}/comments`,
+            `/api/posts/${comment}/replylikes`,
             pageParam ? { searchParams: { cursor: pageParam } } : {},
           )
           .json<CommentsPage>(),

@@ -123,6 +123,18 @@
   display: none;
 }
 
+.str-chat-channel-list {
+  border-right: none;
+}
+
+.str-chat__channel-list-react .str-chat__channel-list-messenger-react {
+  padding-bottom: 0;
+}
+
+.str-chat__channel-search-bar-button--exit-search {
+  display: none;
+}
+
 .scrollbar-hide::-webkit-scrollbar{
     display: none;
   }

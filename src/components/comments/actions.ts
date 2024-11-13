@@ -36,19 +36,7 @@ export async function submitComment({
             data: {
               issuerId: user.id,
               recipientId: post.user.id,
-              postId: post.id,
-              type: "COMMENT",
-            },
-          }),
-        ]
-      : []),
-    ...(post.user.id !== user.id
-      ? [
-          prisma.notification.create({
-            data: {
-              issuerId: user.id,
-              postId: parentId,
-              recipientId: post.user.id,
+              postId: post.id || parentId,
               type: "COMMENT",
             },
           }),

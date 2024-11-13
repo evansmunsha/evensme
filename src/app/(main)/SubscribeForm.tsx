@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Button } from '../../components/ui/button';
 import Modal from '../../components/Model';
-import { BadgeDollarSign } from 'lucide-react';
+import { BadgeDollarSign, Mails } from 'lucide-react';
 
 interface MenuBarProps {
     className?: string;
@@ -40,7 +40,8 @@ export async function SubscribeForm({ className }: MenuBarProps) {
             onClick={() => setIsModalOpen(true)} // Open the modal on button click
             aria-label="Open Affiliates link"
             >
-            <BadgeDollarSign />
+            
+            <Mails />
             <span className="hidden lg:inline">Newsletter</span>
             </Button>
 
