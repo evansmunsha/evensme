@@ -59,7 +59,8 @@ export default function ForYouFeed() {
           onBottomReached={() => hasNextPage && !isFetching && fetchNextPage()}
         >
           {posts.map((post) => (
-            <Post key={post.id} post={post} />
+        /* @ts-ignore */
+            <Post key={post.id} post={post} comment={undefined} />
           ))}
           {isFetchingNextPage && <Loading />}
         </InfiniteScrollContainer>
