@@ -64,7 +64,7 @@ export default function SearchResults({ query }: SearchResultsProps) {
       onBottomReached={() => hasNextPage && !isFetching && fetchNextPage()}
     >
       {posts.map((post) => (
-        /* @ts-ignore */
+        /* @ts-expect-error */
         <Post key={post.id} post={post} comment={undefined} />
       ))}
       {isFetchingNextPage && <div className="flex items-center justify-center mx-auto h-auto">

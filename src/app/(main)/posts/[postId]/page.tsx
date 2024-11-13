@@ -59,7 +59,7 @@ export default async function Page({ params: { postId } }: PageProps) {
   return (
     <main className="flex w-full min-w-0 gap-5">
       <div className="w-full min-w-0 space-y-5">
-       {/* @ts-ignore */}
+       {/* @ts-expect-error */}
         <Post post={post} comment={undefined} />
         <div className="hidden md:block w-72">
       </div>

@@ -43,8 +43,8 @@ export async function GET(req: NextRequest) {
         ],
       },
       include: getPostDataInclude(user.id),
-      orderBy: { createdAt: "desc" },
-      take: pageSize + 1,
+      orderBy: { createdAt: "asc" },
+      take: pageSize - 1,
       cursor: cursor ? { id: cursor } : undefined,
     });
 

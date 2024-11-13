@@ -59,7 +59,7 @@ export default function ForYouFeed() {
           onBottomReached={() => hasNextPage && !isFetching && fetchNextPage()}
         >
           {posts.map((post) => (
-        /* @ts-ignore */
+        /* @ts-expect-error */
             <Post key={post.id} post={post} comment={undefined} />
           ))}
           {isFetchingNextPage && <Loading />}

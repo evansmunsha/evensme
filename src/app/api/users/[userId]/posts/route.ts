@@ -21,7 +21,7 @@ export async function GET(
     const posts = await prisma.post.findMany({
       where: { userId },
       include: getPostDataInclude(user.id),
-      orderBy: { createdAt: "desc" },
+      orderBy: { createdAt: "asc" },
       take: pageSize + 1,
       cursor: cursor ? { id: cursor } : undefined,
     });
