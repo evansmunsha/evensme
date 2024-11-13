@@ -1,7 +1,7 @@
 "use client";
 
 import { useSession } from "@/app/(main)/SessionProvider";
-import { PostData } from "@/lib/types";
+import { CommentData, PostData } from "@/lib/types";
 import { cn, formatRelativeDate } from "@/lib/utils";
 import { Media } from "@prisma/client";
 import { MessageSquare } from "lucide-react";
@@ -18,9 +18,10 @@ import PostMoreButton from "./PostMoreButton";
 
 interface PostProps {
   post: PostData;
+  comment: CommentData;
 }
 
-export default function Post({ post }: PostProps) {
+export default function Post({ post,comment }: PostProps) {
   const { user } = useSession();
 
   const [showComments, setShowComments] = useState(false);
@@ -112,7 +113,7 @@ export default function Post({ post }: PostProps) {
           }}
         />
       </div>
-      {showComments && <Comments post={post} />}
+      {showComments && <Comments post={post} comment={comment} />}
 
       
     </article>
