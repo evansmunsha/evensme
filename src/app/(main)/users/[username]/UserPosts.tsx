@@ -61,7 +61,8 @@ export default function UserPosts({ userId }: UserPostsProps) {
       onBottomReached={() => hasNextPage && !isFetching && fetchNextPage()}
     >
       {posts.map((post) => (
-        <Post key={post.id} post={post} />
+        /* @ts-ignore */
+        <Post key={post.id} post={post} comment={undefined} />
       ))}
       {isFetchingNextPage && <div className="flex items-center justify-center mx-auto h-auto">
         <Loading />
